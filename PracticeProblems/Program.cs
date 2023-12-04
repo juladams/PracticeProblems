@@ -15,8 +15,10 @@ string s2 = "Care";
 string s3 = "Car";
 string s4 = "Cater";
 string s5 = "Recat";
+string s6 = "Rater";
 
 Console.WriteLine(a.isAnagram(s1, s2)); //true
 Console.WriteLine(a.isAnagram(s1, s3)); //false
 Console.WriteLine(a.isAnagram(s3, s4)); //false
 Console.WriteLine(a.isAnagram(s4, s5)); //true
+Console.WriteLine(a.isAnagram(s5, s6)); //false
