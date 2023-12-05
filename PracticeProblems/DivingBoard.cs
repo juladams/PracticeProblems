@@ -11,7 +11,6 @@ namespace PracticeProblems
         public int boardLength(int s, int l, int k)
         {
             //number of possiblities if k is greater than 0
-            var ans = k > 0 ? k+1 : 0;
             int j = k;
 
             //Calculate the possible lengths
@@ -19,7 +18,7 @@ namespace PracticeProblems
             {
                 Console.WriteLine(s * i + l * j--);
             }
-            return ans;
+            return k > 0 ? k + 1 : 0;
         }
     }
 }
