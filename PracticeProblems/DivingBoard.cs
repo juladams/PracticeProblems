@@ -18,6 +18,7 @@ namespace PracticeProblems
             {
                 Console.WriteLine(s * i + l * j--);
             }
+            //((k+n-1)!)/((k!(n-1)!) = number of possiblities
             return k > 0 ? k + 1 : 0;
         }
     }
