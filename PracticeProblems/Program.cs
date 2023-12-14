@@ -25,5 +25,14 @@ Console.WriteLine(a.isAnagram(s4, s5)); //true
 Console.WriteLine(a.isAnagram(s5, s6)); //false*/
 
 //Diving Board
-DivingBoard d = new DivingBoard();
+/*DivingBoard d = new DivingBoard();
 Console.WriteLine("Total number of Possibilities {0}", d.boardLength(3, 2, 4));
+
+//Diving Board 2
+Console.WriteLine("Total number of Possibilities {0}", d.boardLength2(new int[] {1, 3, 2 }, 4));
+*/
+
+BranchLess b = new BranchLess();
+
+Console.WriteLine(b.area('s', 5.0));
+Console.WriteLine(b.area('c', 5.0));
