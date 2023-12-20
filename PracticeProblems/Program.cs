@@ -32,7 +32,28 @@ Console.WriteLine("Total number of Possibilities {0}", d.boardLength(3, 2, 4));
 Console.WriteLine("Total number of Possibilities {0}", d.boardLength2(new int[] {1, 3, 2 }, 4));
 */
 
-BranchLess b = new BranchLess();
+/*BranchLess b = new BranchLess();
 
 Console.WriteLine(b.area('s', 5.0));
-Console.WriteLine(b.area('c', 5.0));
+Console.WriteLine(b.area('c', 5.0));*/
+
+Sort s = new Sort();
+
+int[] a1 = { 10, 30, 50, 60, 0, 0, 0 };
+
+int[] a2 = { 2, 4, 6 };
+
+int[] a3 = { 10, 30, 50, 60, 0, 0, 0 };
+
+int[] a4 = { 2, 4, 6 };
+
+Console.WriteLine("Merge Sort");
+foreach (var item in s.mergeSort(a1, 4, a2, 3))
+{
+    Console.WriteLine(item);
+}
+Console.WriteLine("Merge Sort 2");
+foreach (var item in s.mergeSort2(a3, 4, a4, 3))
+{
+    Console.WriteLine(item);
+}
