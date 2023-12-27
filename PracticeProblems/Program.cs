@@ -37,7 +37,8 @@ Console.WriteLine("Total number of Possibilities {0}", d.boardLength2(new int[] 
 Console.WriteLine(b.area('s', 5.0));
 Console.WriteLine(b.area('c', 5.0));*/
 
-Sort s = new Sort();
+//Merge Sort
+/*Sort s = new Sort();
 
 int[] a1 = { 10, 30, 50, 60, 0, 0, 0 };
 
@@ -57,3 +58,27 @@ foreach (var item in s.mergeSort2(a3, 4, a4, 3))
 {
     Console.WriteLine(item);
 }
+
+int[] a5 = {1};
+int[] a6 = {};
+
+Console.WriteLine("Merge Sort 2 test 2");
+foreach (var item in s.mergeSort2(a5, 1, a6, 0))
+{
+    Console.WriteLine(item);
+}
+
+int[] a7 = {0};
+int[] a8 = {1};
+
+Console.WriteLine("Merge Sort 2 test 3");
+foreach (var item in s.mergeSort2(a7, 0, a8, 1))
+{
+    Console.WriteLine(item);
+}*/
+
+//Reverse Case
+ReverseCase r = new ReverseCase();
+
+Console.WriteLine(r.reverseCase("Hello World"));
+Console.WriteLine(r.reverseCase("AAbbCCddEEffGG1234"));
