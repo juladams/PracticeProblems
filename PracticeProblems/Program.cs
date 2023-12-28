@@ -78,7 +78,28 @@ foreach (var item in s.mergeSort2(a7, 0, a8, 1))
 }*/
 
 //Reverse Case
-ReverseCase r = new ReverseCase();
+/*ReverseCase r = new ReverseCase();
 
 Console.WriteLine(r.reverseCase("Hello World"));
-Console.WriteLine(r.reverseCase("AAbbCCddEEffGG1234"));
+Console.WriteLine(r.reverseCase("AAbbCCddEEffGG1234"));*/
+
+//Remove Element
+RemoveElement r = new RemoveElement();
+
+int[] nums = [3, 2, 2, 3];
+int val = 3;
+
+r.removeElement(nums, val);
+
+Console.WriteLine("\nSecond Test");
+
+nums = [0, 1, 2, 2, 3, 0, 4, 2];
+val = 2;
+
+r.removeElement(nums, val);
+
+Console.WriteLine("\nThird Test");
+
+nums = [1];
+val = 1;
+r.removeElement(nums, val);
