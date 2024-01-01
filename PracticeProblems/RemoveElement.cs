@@ -44,5 +44,19 @@ namespace PracticeProblems
                 Console.WriteLine(nums[i]);
             }
         }
+        
+        public int removeElement2(int[] nums, int val)
+        {
+            int count = 0;
+
+            foreach(int num in nums)
+            {
+                if(num != val)
+                {
+                    nums[count++] = num;
+                }
+            }
+            return count;
+        }
     }
 }
