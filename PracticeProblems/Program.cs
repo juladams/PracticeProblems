@@ -83,7 +83,7 @@ foreach (var item in s.mergeSort2(a7, 0, a8, 1))
 Console.WriteLine(r.reverseCase("Hello World"));
 Console.WriteLine(r.reverseCase("AAbbCCddEEffGG1234"));*/
 
-//Remove Element
+/*//Remove Element
 RemoveElement r = new RemoveElement();
 
 int[] nums = [3, 2, 2, 3];
@@ -102,4 +102,22 @@ Console.WriteLine("\nThird Test");
 
 nums = [1];
 val = 1;
-r.removeElement(nums, val);
+r.removeElement(nums, val);*/
+
+//Remove Duplicates
+RemoveDuplicates r = new RemoveDuplicates();
+int[] nums = { 1, 2, 3 };
+int[] nums2 = { 1, 1, 2 };
+int[] nums3 = { 1, 1, 2, 3 };
+int[] nums4 = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+int[] nums5 = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 , 5};
+
+Console.WriteLine(r.removeDuplicates(nums));
+Console.WriteLine("test 2");   
+Console.WriteLine(r.removeDuplicates(nums2));
+Console.WriteLine("test 3");
+Console.WriteLine(r.removeDuplicates(nums3));
+Console.WriteLine("test 4");
+Console.WriteLine(r.removeDuplicates(nums4));
+Console.WriteLine("test 5");
+Console.WriteLine(r.removeDuplicates(nums5));
