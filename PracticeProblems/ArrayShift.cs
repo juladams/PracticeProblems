@@ -37,39 +37,24 @@ namespace PracticeProblems
             Console.WriteLine("Original Array");
             Array.ForEach(nums, n => Console.WriteLine(n));
 
-            int shift = k > nums.Length ? nums.Length - (k % nums.Length) : nums.Length - k;
+            int shift = k > nums.Length ? k % nums.Length : k;
 
-            if (shift > 0 && nums.Length > 1 && k > 0)
+            if (shift > 0 && nums.Length > 1)
             {
-                int offset = shift;
-                int i = 0;
+                int jump = shift;
+                int hold = nums[0];
+                int count = nums.Length;
 
-                /*if (ar.Length % 2 == 0)
-                {*/
-                    while (i < nums.Length)
-                    {
-                        int temp = nums[i];
-                        nums[i++] = nums[offset];
-                        nums[offset] = temp;
-
-                        offset = offset == nums.Length - 1 ? shift : offset + 1; // fix this line
-                    }
-                //}
-                /*else
+                //fix this
+                while (count > 0)
                 {
-                    int odd = ar[offset-1];
+                    int tmp = nums[jump]; 
+                    nums[jump] = hold;
+                    hold = tmp;
 
-                    while (i < ar.Length/2)
-                    {
-                        int temp = ar[i];
-                        ar[i++] = ar[offset];
-                        ar[offset-1] = temp;
-
-                        offset ++;
-                    }
-
-                    ar[^1] = odd;
-                }*/
+                    jump = jump + shift > nums.Length - 1 ? shift - (nums.Length - jump - 1) - 1 : jump + shift; // fix this line
+                    count--;
+                }
             }
 
             Console.WriteLine("Shifted Array");

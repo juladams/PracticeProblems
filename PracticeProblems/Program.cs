@@ -123,8 +123,9 @@ Console.WriteLine(r.removeDuplicates(nums5));*/
 
 //Array Shift
 ArrayShift a = new ArrayShift();
-int[] nums = [1, 2, 3, 4, 5, 6, 7]; // fix for this case its cyclic
-int k = 3;
+int[] nums = [1, 2, 3, 4]; // Do a jump. If the jump is greater than the length of the array - 1, 
+//then the jump gets the shift - (the remainder - 1) - 1
+int k = 2;
 
 //a.shiftRight(nums, k);
 a.shiftArray2(nums, k);
