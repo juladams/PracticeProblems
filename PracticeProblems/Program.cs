@@ -122,10 +122,28 @@ Console.WriteLine("test 5");
 Console.WriteLine(r.removeDuplicates(nums5));*/
 
 //Array Shift
-ArrayShift a = new ArrayShift();
+/*ArrayShift a = new ArrayShift();
 int[] nums = [1, 2, 3, 4]; // Do a jump. If the jump is greater than the length of the array - 1, 
 //then the jump gets the shift - (the remainder - 1) - 1
 int k = 2;
 
 //a.shiftRight(nums, k);
-a.shiftArray2(nums, k);
+a.shiftArray2(nums, k);*/
+
+//SumArray
+SumArray s = new SumArray();
+
+int[] nums = { 0, 2, 3, 4};
+int[] nums2 = { 1, 2, 0, 4, 5, 0 };
+
+Console.WriteLine("Test 1");
+foreach (var item in s.productExceptSelf(nums))
+{
+    Console.WriteLine(item);
+}
+
+Console.WriteLine("Test 2");
+foreach (var item in s.productExceptSelf(nums2))
+{
+    Console.WriteLine(item);
+}
