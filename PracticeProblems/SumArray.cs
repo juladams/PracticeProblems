@@ -52,11 +52,6 @@ namespace PracticeProblems
         
         public int[] productExceptSelf2(int[] nums)
         {
-            if(nums.Length == 0)
-                return new int[0];
-            if (nums.Length == 1)
-                return nums;
-
             int[] result = new int[nums.Length];
             //Initialize the result array to 1
             result[0] = 1;
