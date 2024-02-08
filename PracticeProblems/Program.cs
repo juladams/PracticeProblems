@@ -132,18 +132,31 @@ a.shiftArray2(nums, k);*/
 
 //SumArray
 SumArray s = new SumArray();
+SumArray s2 = new SumArray();
 
-int[] nums = { 0, 2, 3, 4};
-int[] nums2 = { 1, 2, 0, 4, 5, 0 };
+int[] nums = { 1, 2, 3, 4};
+int[] nums2 = { 1, 2, 3, 4, 5, 0};
 
-Console.WriteLine("Test 1");
+Console.WriteLine("Test 1 productExceptSelf #1");
 foreach (var item in s.productExceptSelf(nums))
 {
     Console.WriteLine(item);
 }
 
-Console.WriteLine("Test 2");
+Console.WriteLine("Test 1 productExceptSelf #2");
+foreach (var item in s2.productExceptSelf2(nums))
+{
+    Console.WriteLine(item);
+}
+
+Console.WriteLine("Test 2 productExcepSelf #1");
 foreach (var item in s.productExceptSelf(nums2))
+{
+    Console.WriteLine(item);
+}
+
+Console.WriteLine("Test 2 productExceptSelf #2");   
+foreach (var item in s2.productExceptSelf2(nums2))
 {
     Console.WriteLine(item);
 }
