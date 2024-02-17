@@ -131,32 +131,17 @@ int k = 2;
 a.shiftArray2(nums, k);*/
 
 //SumArray
-SumArray s = new SumArray();
-SumArray s2 = new SumArray();
 
-int[] nums = { 1, 2, 3, 4};
-int[] nums2 = { 1, 2, 3, 4, 5, 0};
+//Candy
+Candy c = new Candy();
+int[] ratings = { 1, 0, 2 };
+Console.WriteLine("test 1"); 
+Console.WriteLine(c.candy(ratings));//5
 
-Console.WriteLine("Test 1 productExceptSelf #1");
-foreach (var item in s.productExceptSelf(nums))
-{
-    Console.WriteLine(item);
-}
+Console.WriteLine("test 2");
+int[] ratings2 = { 1, 2, 2 };
+Console.WriteLine(c.candy(ratings2));//4
 
-Console.WriteLine("Test 1 productExceptSelf #2");
-foreach (var item in s2.productExceptSelf2(nums))
-{
-    Console.WriteLine(item);
-}
-
-Console.WriteLine("Test 2 productExcepSelf #1");
-foreach (var item in s.productExceptSelf(nums2))
-{
-    Console.WriteLine(item);
-}
-
-Console.WriteLine("Test 2 productExceptSelf #2");   
-foreach (var item in s2.productExceptSelf2(nums2))
-{
-    Console.WriteLine(item);
-}
+Console.WriteLine("test 3");// failed with 11
+int[] ratings3 = { 1, 2, 87, 87, 87, 2, 1 };
+Console.WriteLine(c.candy(ratings3));//13
