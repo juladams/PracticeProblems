@@ -133,7 +133,7 @@ a.shiftArray2(nums, k);*/
 //SumArray
 
 //Candy
-Candy c = new Candy();
+/*Candy c = new Candy();
 int[] ratings = { 1, 0, 2 };
 Console.WriteLine("test 1"); 
 Console.WriteLine(c.candy(ratings));//5
@@ -145,3 +145,11 @@ Console.WriteLine(c.candy(ratings2));//4
 Console.WriteLine("test 3");// failed with 11
 int[] ratings3 = { 1, 2, 87, 87, 87, 2, 1 };
 Console.WriteLine(c.candy(ratings3));//13
+*/
+//Randomized Set
+RandomizedSet r = new RandomizedSet();
+Console.WriteLine(r.Insert(1));
+Console.WriteLine(r.Remove(2));
+Console.WriteLine(r.Insert(2));
+Console.WriteLine(r.GetRandom());
+Console.WriteLine(r.Remove(1));
