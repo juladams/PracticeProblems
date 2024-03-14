@@ -147,9 +147,39 @@ int[] ratings3 = { 1, 2, 87, 87, 87, 2, 1 };
 Console.WriteLine(c.candy(ratings3));//13
 */
 //Randomized Set
-RandomizedSet r = new RandomizedSet();
+/*RandomizedSet r = new RandomizedSet();
 Console.WriteLine(r.Insert(1));
 Console.WriteLine(r.Remove(2));
 Console.WriteLine(r.Insert(2));
 Console.WriteLine(r.GetRandom());
 Console.WriteLine(r.Remove(1));
+*/
+
+//MaxWater
+/*Maxwater m = new Maxwater();
+int[] height = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+
+Console.WriteLine(m.maxArea(height)); //49
+*/
+
+//ThreeSum
+ThreeSome t = new ThreeSome();
+int[] nums = { -1, 0, 1, 2, -1, -4 };
+Console.WriteLine("Test 1");
+foreach (var item in t.ThreeSum(nums))
+{
+    Console.WriteLine(string.Join(",", item));
+}
+
+Console.WriteLine("Test 2");
+int[] nums2 = { 1, -1, -1, 0 };
+foreach (var item in t.ThreeSum(nums2))
+{
+    Console.WriteLine(string.Join(",", item));
+}
+
+/*IList<IList<int>> result = t.ThreeSum(nums2).Distinct().ToList();
+foreach(var item in result)
+{
+    Console.WriteLine(string.Join(",", item));
+}*/
