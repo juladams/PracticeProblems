@@ -163,7 +163,7 @@ Console.WriteLine(m.maxArea(height)); //49
 */
 
 //ThreeSum
-ThreeSome t = new ThreeSome();
+/*ThreeSome t = new ThreeSome();
 int[] nums = { -1, 0, 1, 2, -1, -4 };
 Console.WriteLine("Test 1");
 foreach (var item in t.ThreeSum(nums))
@@ -178,8 +178,88 @@ foreach (var item in t.ThreeSum(nums2))
     Console.WriteLine(string.Join(",", item));
 }
 
-/*IList<IList<int>> result = t.ThreeSum(nums2).Distinct().ToList();
+IList<IList<int>> result = t.ThreeSum(nums2).Distinct().ToList();
 foreach(var item in result)
 {
     Console.WriteLine(string.Join(",", item));
-}*/
+}
+*/
+
+//Groups
+/*FindCircleNum f = new FindCircleNum();
+int[][] arr = new int[3][];
+arr[0] = new int[] { 1, 1, 0 };
+arr[1] = new int[] { 1, 1, 0 };
+arr[2] = new int[] { 0, 0, 1 };
+Console.WriteLine("Test 1");
+Console.WriteLine(f.findCircleNum(arr)); //2
+
+int[][] arr2 = new int[4][];
+arr2[0] = new int[] { 1, 1, 0, 0 };
+arr2[1] = new int[] { 1, 1, 1, 0 };
+arr2[2] = new int[] { 0, 1, 1, 0 };
+arr2[3] = new int[] { 0, 0, 0, 1 };
+Console.WriteLine("Test 2");
+Console.WriteLine(f.findCircleNum(arr2)); //2
+
+int[][] arr3 = new int[5][];
+arr3[0] = new int[] { 1, 0, 0, 0, 0 };
+arr3[1] = new int[] { 0, 1, 0, 0, 0 };
+arr3[2] = new int[] { 0, 0, 1, 0, 0 };
+arr3[3] = new int[] { 0, 0, 0, 1, 0 };
+arr3[4] = new int[] { 0, 0, 0, 0, 1 };
+Console.WriteLine("Test 3");
+Console.WriteLine(f.findCircleNum(arr3)); //5
+
+int[][] arr4 = new int[4][];
+arr4[0] = new int[] { 1, 0, 0, 1 };
+arr4[1] = new int[] { 0, 1, 1, 0 };
+arr4[2] = new int[] { 0, 1, 1, 1 };
+arr4[3] = new int[] { 1, 0, 1, 1 };
+Console.WriteLine("Test 4");
+Console.WriteLine(f.findCircleNum(arr4)); //1
+*/
+
+//Binary Tree
+/*Node b = new Node();
+b.val = 1;
+b.left = new Node();
+b.left.val = 2;
+b.right = new Node();
+b.right.val = 3;
+b.left.left = new Node();
+b.left.left.val = 4;
+b.left.right = new Node();
+b.left.right.val = 5;
+b.right.left = new Node();
+b.right.left.val = 6;
+b.right.right = new Node();
+b.right.right.val = 7;
+
+//DFS
+BinarySearch bs = new BinarySearch();
+Console.WriteLine("DFS");
+Console.WriteLine(bs.DFS(b, 7));
+
+//BFS
+Console.WriteLine("BFS");
+Console.WriteLine(bs.BFS(b, 7));
+
+//Row Sum
+Console.WriteLine("Row Sum");
+bs.sumRow(b);
+*/
+
+//Exam
+/*Exam e = new Exam();
+List<int> ints = new List<int> { 4,2,3,1,1 };
+Console.WriteLine("Test 1");
+foreach (var item in e.findKthMinimumVulnerbility(3, 4, ints))
+{
+    Console.WriteLine(item);
+}
+*/
+//Dynnamic Programming
+DynamicProgramming d = new DynamicProgramming();
+Console.WriteLine("Test 1");
+Console.WriteLine(d.ClimbStairs(2)); //2
