@@ -8,17 +8,32 @@ namespace PracticeProblems
 {
     internal class Exam
     {
-        /*public int LocateEarliestMonth(List<int> stockPrice)
+        
+        public int LocateEarliestMonth(List<int> stockPrice)
         {
             int month = 0;
-            List<int>  left = new List<int>();
-            left.Add(stockPrice[0]);
-            List<int> right = new List<int>();
-            right.Add(stockPrice[1]);
+            int left = 0;
+            int right = 0;
+            int change = int.MaxValue;
 
-            for(int i = 1; i < stockPrice.Count-1;i++)
-                left[i] = left[i-1] + stockPrice[i];
-        }*/
+            //get the total sum of the stock price
+            for(int i = 0; i < stockPrice.Count;i++)
+                right += stockPrice[i];
+
+            //iterate through the stock price and find the earliest month
+            for (int i = 0; i < stockPrice.Count-1; i++)
+            {
+                left += stockPrice[i];
+                right -= stockPrice[i];
+
+                if (Math.Abs(left - right) < change)
+                {
+                    change = Math.Abs(left - right);
+                    month = i + 1;
+                }
+            }
+            return month;
+        }
 
         public List<int> findKthMinimumVulnerbility(int k, int m, List<int> vulnerbility)
         {
