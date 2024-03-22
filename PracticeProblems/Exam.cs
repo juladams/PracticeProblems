@@ -49,12 +49,6 @@ namespace PracticeProblems
             return result;
 
         }
-        /*public int findKthMinimumVulnerbility2(int k, int m, List<int> vulnerbility)
-        {
-            List<int> result = new List<int>();
-
-
-
-        }*/   
+       
     }
 }

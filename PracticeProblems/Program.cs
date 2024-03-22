@@ -260,6 +260,19 @@ foreach (var item in e.findKthMinimumVulnerbility(3, 4, ints))
 }
 */
 //Dynnamic Programming
-DynamicProgramming d = new DynamicProgramming();
+/*DynamicProgramming d = new DynamicProgramming();
 Console.WriteLine("Test 1");
 Console.WriteLine(d.ClimbStairs(2)); //2
+*/
+//FindChange
+DynamicProgramming f = new DynamicProgramming();
+
+int[] coins = { 2};
+int amount = 3;
+Console.WriteLine("Test 1");
+Console.WriteLine(f.CoinChange(coins, amount)); //3
+
+Console.WriteLine("Test 2");
+int[] coins2 = { 186, 419, 83, 408 };
+int amount2 = 6249;
+Console.WriteLine(f.CoinChange(coins2, amount2)); //20
