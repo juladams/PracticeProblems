@@ -265,7 +265,7 @@ Console.WriteLine("Test 1");
 Console.WriteLine(d.ClimbStairs(2)); //2
 */
 //FindChange
-DynamicProgramming f = new DynamicProgramming();
+/*DynamicProgramming f = new DynamicProgramming();
 
 int[] coins = { 2};
 int amount = 3;
@@ -276,3 +276,64 @@ Console.WriteLine("Test 2");
 int[] coins2 = { 186, 419, 83, 408 };
 int amount2 = 6249;
 Console.WriteLine(f.CoinChange(coins2, amount2)); //20
+*/
+
+//Diagonal Traverse
+/*Arrays a = new Arrays();
+int[][] matrix = new int[3][];
+matrix[0] = new int[] { 1, 2, 3 };
+matrix[1] = new int[] { 4, 5, 6 };
+matrix[2] = new int[] { 7, 8, 9 };
+
+foreach (var item in a.DiagnolTraverse(matrix))
+{
+    Console.WriteLine(item);
+}
+*/
+
+//Spiral Matrix
+/*Arrays sp = new Arrays();
+int[][] matrix = new int[3][];
+matrix[0] = new int[] { 1, 2, 3 };
+matrix[1] = new int[] { 4, 5, 6 };
+matrix[2] = new int[] { 7, 8, 9 };
+
+foreach (var item in sp.SpiralOrder(matrix))
+{
+    Console.WriteLine(item);
+}
+
+Console.WriteLine("Test 2");
+int[][] matrix2 = new int[4][];
+matrix2[0] = new int[] { 1, 2, 3, 4 };
+matrix2[1] = new int[] { 5, 6, 7, 8 };
+matrix2[2] = new int[] { 9, 10, 11, 12 };
+matrix2[3] = new int[] { 13, 14, 15, 16 };
+
+foreach (var item in sp.SpiralOrder(matrix2))
+{
+    Console.WriteLine(item);
+}
+
+Console.WriteLine("Test 3");
+int[][] matrix3 = new int[5][];
+matrix3[0] = new int[] { 1, 2, 3, 4, 5 };
+matrix3[1] = new int[] { 6, 7, 8, 9, 10 };
+matrix3[2] = new int[] { 11, 12, 13, 14, 15 };
+matrix3[3] = new int[] { 16, 17, 18, 19, 20 };
+matrix3[4] = new int[] { 21, 22, 23, 24, 25 };
+
+foreach (var item in sp.SpiralOrder(matrix3))
+{
+    Console.WriteLine(item);
+}
+*/
+
+//Pascals Triangle
+Arrays p = new Arrays();
+
+Console.WriteLine("Test 1");
+foreach (var item in p.Generate(22))
+{
+    Console.WriteLine(string.Join(",", item));
+}
