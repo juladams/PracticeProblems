@@ -167,7 +167,7 @@ namespace PracticeProblems
 
             return res;
         }
-
+        //Pascsal's Triangle
         public IList<IList<int>> Generate(int numRows)
         {
             IList<IList<int>> res = new List<IList<int>>();
@@ -202,6 +202,105 @@ namespace PracticeProblems
             fact.Add(n, Factorial(n - 1, fact) * n);
 
             return fact[n];
+        }
+
+        //Add two binary numbers
+        public string AddBinary(string a, string b)
+        {
+            if(a.Length < b.Length)
+            {
+                string tmp = a;
+                a = b;
+                b = tmp;
+            }
+            char[] aArr = a.ToCharArray();
+            char[] bArr = b.ToCharArray();  
+            bool carry = false;
+
+            for(int i = 1; i <=b.Length; i++)
+            {
+                //if both are 1
+                if (aArr[^i] == '1' && bArr[^i]  == '1')
+                {
+                    if (carry)
+                        aArr[^i] = '1';
+                    else
+                    {
+                        aArr[^i] = '0';
+                        carry = true;
+                    }
+                }
+                //if one is 1 and the other is 0
+                else if ((aArr[^i] == '1' && bArr[^i] == '0') || (aArr[^i] == '0' && bArr[^i] == '1'))
+                {
+                    if(carry)
+                       aArr[^i] = '0';
+                    else
+                        aArr[^i] = '1';
+                }
+                //if both are 0
+                else
+                {
+                    if(carry)
+                    {
+                        aArr[^i] = '1';
+                        carry = false;
+                    }
+                }
+                //if we are at the first element and there is a carry
+                if(i == b.Length && carry)
+                {
+                    for(int j = b.Length + 1; j <= a.Length; j++)
+                    {
+                        if (aArr[^j] == '1')
+                        {
+                            aArr[^j] = '0';
+                        }
+                        else
+                        {
+                            aArr[^j] = '1';
+                            carry = false;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if(carry)
+            {
+                return "1" + new string(aArr);
+            }
+
+            return new string(aArr);
+        }
+
+        public string AddBinary2(string a, string b)
+        {
+            //Initialize the pointers to the end of the strings
+            int i = a.Length - 1;
+            int j = b.Length - 1;
+            int carry = 0;
+
+            StringBuilder sb = new StringBuilder();
+
+            while( i >=0 || j >= 0)
+            {
+                //Add the two numbers and the carry. Subtract '0' to get the integer value of the character
+                if(i >= 0)
+                    carry += a[i--] - '0';
+                if(j >= 0)
+                    carry += b[j--] - '0';
+
+                //Add the carry mod 2 to the string builder
+                sb.Append(carry % 2);
+                //Divide the carry by 2 to get the new carry
+                carry /= 2;
+            }
+
+            if(carry > 0)
+                sb.Append(carry);
+
+            return new string(sb.ToString().Reverse().ToArray());
         }
     }
 

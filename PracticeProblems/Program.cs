@@ -330,10 +330,21 @@ foreach (var item in sp.SpiralOrder(matrix3))
 */
 
 //Pascals Triangle
-Arrays p = new Arrays();
+/*Arrays p = new Arrays();
 
 Console.WriteLine("Test 1");
 foreach (var item in p.Generate(22))
 {
     Console.WriteLine(string.Join(",", item));
 }
+*/
+//Adding Binary
+Arrays a = new Arrays();
+Console.WriteLine("Test 1");
+Console.WriteLine(a.AddBinary2("11", "1")); //100
+
+Console.WriteLine("Test 2");
+Console.WriteLine(a.AddBinary2("0", "1")); //1
+
+Console.WriteLine("Test 3");
+Console.WriteLine(a.AddBinary2("1111", "1111")); //10101
