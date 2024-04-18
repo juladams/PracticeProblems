@@ -8,6 +8,7 @@ namespace PracticeProblems
 {
     internal class ThreeSome
     {
+        //Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0?
         public IList<IList<int>> ThreeSum(int[] nums)
         {
             IList<IList<int>> result = new List<IList<int>>();

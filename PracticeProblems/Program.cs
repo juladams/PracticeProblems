@@ -339,7 +339,7 @@ foreach (var item in p.Generate(22))
 }
 */
 //Adding Binary
-Arrays a = new Arrays();
+/* Arrays a = new Arrays();
 Console.WriteLine("Test 1");
 Console.WriteLine(a.AddBinary2("11", "1")); //100
 
@@ -348,3 +348,18 @@ Console.WriteLine(a.AddBinary2("0", "1")); //1
 
 Console.WriteLine("Test 3");
 Console.WriteLine(a.AddBinary2("1111", "1111")); //10101
+ */
+
+ //StrStr
+ /* Arrays str = new Arrays();
+ Console.WriteLine("Test 1");
+ Console.WriteLine(str.StrStr("words", "wo"));
+ Console.WriteLine("Test 2");
+ Console.WriteLine(str.StrStr("wowordswo", "words"));
+  */
+
+//LongestCommonPrefix
+Arrays st = new Arrays();
+string[] strs = {"ab","a"};
+Console.WriteLine("Test 1");
+Console.WriteLine(st.LongestCommonPrefix(strs));

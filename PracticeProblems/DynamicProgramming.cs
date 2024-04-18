@@ -9,6 +9,9 @@ namespace PracticeProblems
 {
     internal class DynamicProgramming
     {
+        //LeetCode 70. Climbing Stairs
+        //You are climbing a staircase. It takes n steps to reach the top.
+        //Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
         public int ClimbStairs(int n)
         {
             //base case
@@ -78,6 +81,9 @@ namespace PracticeProblems
             return (n + 1) * (n + 2) * (n + 3) * (n + 4) / 24;
         }
 
+        //LeetCode 322. Coin Change
+        //You are given coins of different denominations and a total amount of money amount.
+        //Write a function to compute the fewest number of coins that you need to make up that amount.
         public int CoinChange(int[] coins, int amount)
         {
             //base case
@@ -98,6 +104,10 @@ namespace PracticeProblems
                 for(int j = coins[i]; j <= amount; j++)
                 {
                     //update the memo array with the minimum number of coins needed to make the amount
+                    //if the current coin is less than or equal to the amount and the current coin + 1 is less than the current amount
+                    //then update the memo array with the minimum number of coins needed to make the amount
+                    //by taking the minimum of the current amount and the current amount - the current coin + 1
+                    //this is because we are looking for the minimum number of coins needed to make the amount
                     memo[j] = Math.Min(memo[j], memo[j - coins[i]] + 1);
                 }
             }

@@ -8,6 +8,9 @@ namespace PracticeProblems
 {
     internal class Cherries
     {
+        //In a N x N grid representing a field of cherries, each cell is one of three possible integers.
+        //0 means the cell is empty, so you can pass through;
+        //1 means the cell contains a cherry, that you can pick up and pass through;
         public int CherryPickup(int[][] grid)
         {
             int n = grid.Length;

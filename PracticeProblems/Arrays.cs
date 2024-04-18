@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -301,6 +302,83 @@ namespace PracticeProblems
                 sb.Append(carry);
 
             return new string(sb.ToString().Reverse().ToArray());
+        }
+
+        public int StrStr(string haystack, string needle) 
+        {
+            if(needle == null)
+                return -1;
+
+            //iterate through the chars to find the first match
+            for(int i = 0; i < haystack.Length-needle.Length + 1; i++)
+            {
+                if(haystack[i] == needle[0] && haystack.Length - i >= needle.Length)
+                {
+                    int j = 0;
+                    bool match = true;
+                    
+                    while(j < needle.Length && match == true)
+                    {
+                        if(haystack[i+j] != needle[j])
+                        {
+                            match = false;
+                            break;
+                        }
+                        j++;
+                    }
+
+                    if(match)
+                        return i;
+                }
+            }
+
+            return -1;
+        }
+
+        public string LongestCommonPrefix(string[] strs) 
+        {
+            if(strs.Length == 1)
+                return strs[0];
+
+            int i = 0;
+            bool pre = true;
+
+            StringBuilder res = new StringBuilder();
+
+            while(pre)
+            { 
+                char c;
+                if(strs[0].Length <= i)
+                    break;
+                //    
+                c = strs[0][i];
+
+                for(int j = 0; j < strs.Length; j++)
+                {
+                    if(strs[j].Length == 0)
+                        return "";
+
+                    //Checking to see if 'i' is inbound of the length of the jth string of the array
+                    if(strs[j].Length <= i)
+                    {
+                        pre = false;
+                        break;
+                    }
+                    //CHecking if char equals char at position 'i' of string j
+                    else if(!c.Equals(strs[j][i]))
+                    {
+                        pre = false;
+                        break;
+                    }
+                }
+
+                if(pre)
+                {
+                    res.Append(c);
+                    i++;
+                }
+            }
+            return res.Length == 0 ? "" : res.ToString();
         }
     }
 
