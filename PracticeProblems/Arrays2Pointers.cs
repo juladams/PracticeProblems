@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using System.Numerics;
+using System.Text;
 
 namespace PracticeProblems
 {
@@ -125,6 +127,132 @@ namespace PracticeProblems
             //reverse the remaining elements
             Array.Reverse(nums, k, nums.Length - k);
         }
+
+
+        public string ReverseWords(string s)
+        {
+            //Create a string array of the words, then print the words in reverse order
+            //trim leading and trailing whitespaces
+            s = s.Trim();
+
+            List<string> res = new List<string>();
+
+            //build the string array of words
+            for(int i = 0; i < s.Length; i++)
+            {
+                if(s[i] != ' ' && i < s.Length)
+                {
+                    StringBuilder tmp = new StringBuilder();
+
+                    while(i < s.Length && s[i] != ' ' )
+                        tmp.Append(s[i++]);
+
+                    res.Add(tmp.ToString());
+                }
+            }
+
+            StringBuilder str = new StringBuilder();
+            res.Reverse();
+
+            string t = String.Join(' ', res);
+
+            return t;
+        }
+
+        //Keep word order but reverse the letters in each word
+        public string ReverseWords2(string s) 
+
+        {
+            List<string> res = new List<string>();
+
+            //build the string array of words
+            for(int i = 0; i < s.Length; i++)
+            {
+                if(s[i] != ' ' && i < s.Length)
+                {
+                    StringBuilder tmp = new StringBuilder();
+
+                    while(i < s.Length && s[i] != ' ' )
+                        tmp.Append(s[i++]);
+
+                    res.Add(tmp.ToString());
+                }
+            }
+
+            StringBuilder str = new StringBuilder();
+
+            foreach(string word in res)
+            {
+                char[] tmp = word.ToCharArray();
+                Array.Reverse(tmp);
+                str.Append(new string(tmp) + ' ');
+            }
+
+            return str.ToString().Trim();
+        }
+
+        //Leetcode 18, Given an array nums of n integers and an integer target, are there elements 
+        //a, b, c, and d in nums such that a + b + c + d = target?
+       /*  public IList<IList<int>> FourSum(int[] nums, int target) 
+        {
+            if(nums.Length < 4)
+                return new List<IList<int>>();
+            
+            //Ilist of Ilist to store the result
+            IList<IList<int>> result = new List<IList<int>>();
+
+            //sort the array
+            Array.Sort(nums);
+
+            //iterate through the array
+            //use two pointers to find the sum of the two numbers that equal the target
+            for(int i = 0; i < nums.Length - 3; i++)
+            {
+                //skip duplicates
+                if(i > 0 && nums[i] == nums[i - 1])
+                    continue;
+
+                for(int j = i + 1;j < nums.Length - 2; j++)
+                {
+                    if(j > i + 1 && nums[j] == nums[j - 1])
+                        continue;
+                    
+                    int left = j + 1;
+                    int right = nums.Length - 1;
+
+                    while(left < right)
+                    {
+                        long leftValue = nums[i];
+                        long centerValue = nums[j];
+                        long startValue = nums[left];
+                        long endValue = nums[right];
+
+                        long sum = leftValue + centerValue + startValue + endValue;
+
+                        //if the sum is greater than the target decrease right pointer
+                        //else increase left pointer
+                        if(sum > target)
+                            right--;
+                        else if(sum < target)
+                            left++;
+                        else
+                        {
+                            result.Add(new List<int> {nums[i], nums[j], nums[left], nums[right]});
+                            left++;
+                            
+                            while (nums[left] == nums[left - 1] && left < nums.Length - 1)
+                                left++;
+                        }
+                    }
+
+                }
+                
+            }
+
+
+            return result;
+        } */
+
     }
 
     

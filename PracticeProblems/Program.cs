@@ -359,7 +359,48 @@ Console.WriteLine(a.AddBinary2("1111", "1111")); //10101
   */
 
 //LongestCommonPrefix
-Arrays st = new Arrays();
+/* Arrays st = new Arrays();
 string[] strs = {"ab","a"};
 Console.WriteLine("Test 1");
 Console.WriteLine(st.LongestCommonPrefix(strs));
+ */
+
+ //Pascal Triangle 2
+/* Arrays p = new Arrays();
+Console.WriteLine("Test 1");
+foreach (var item in p.GetRow(3))
+{
+    Console.WriteLine(item);
+} */
+
+//Reverse Words
+/* Arrays2Pointers r = new Arrays2Pointers();
+Console.WriteLine("Test 1");
+Console.WriteLine(r.ReverseWords2("The sky is blue"));
+ */
+
+/*  //Move Zeroes
+ Arrays m = new Arrays();
+ int[] nums = { 0, 1};
+ Console.WriteLine("Test 1");
+ m.MoveZeroes(nums);
+ foreach (var item in nums)
+ {
+     Console.WriteLine(item);
+ } */
+
+ //Four Sum
+ Arrays2Pointers f = new Arrays2Pointers();
+ int[] nums = {1000000000,1000000000,1000000000,1000000000};
+ Console.WriteLine("Test 1");
+ foreach (var item in f.FourSum(nums, -294967296))
+ {
+     Console.WriteLine(string.Join(",", item));
+ }
+ Console.WriteLine("");
+ int[] nums2 = {-3,-1,0,2,4,5};
+ Console.WriteLine("Test 2");
+ foreach (var item in f.FourSum(nums2, 1))
+ {
+     Console.WriteLine(string.Join(",", item));
+ }

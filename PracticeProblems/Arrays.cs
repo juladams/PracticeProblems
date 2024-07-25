@@ -171,7 +171,9 @@ namespace PracticeProblems
         //Pascsal's Triangle
         public IList<IList<int>> Generate(int numRows)
         {
+            //List to store the result
             IList<IList<int>> res = new List<IList<int>>();
+            //Dictionary to store the factorial values
             Dictionary<int, BigInteger> fact = new Dictionary<int, BigInteger>();
             fact.Add(0, 1);
             fact.Add(1, 1);
@@ -184,6 +186,8 @@ namespace PracticeProblems
                 //the first row has 1 element and it is 0 indexed
                 foreach (int j in Enumerable.Range(0, i+1))// 
                 {
+                    //Calculate the value of the current element using the formula for Pascal's Triangle
+                    //nCr = n! / r!(n - r)! where n = i and r = j
                     BigInteger val = Factorial(i, fact)/(Factorial(j, fact) * (Factorial(i - j, fact)));
                     
                     tmp.Add((int)val);
@@ -195,6 +199,7 @@ namespace PracticeProblems
             return res;
         }
 
+        //Pascal's Triangle Helper method
         public BigInteger Factorial(int n, Dictionary<int, BigInteger> fact)
         {
             if(fact.ContainsKey(n))
@@ -203,6 +208,30 @@ namespace PracticeProblems
             fact.Add(n, Factorial(n - 1, fact) * n);
 
             return fact[n];
+        }
+
+        //Pascal's Triangle II
+        public IList<int> GetRow(int rowIndex)
+        {
+            int n = rowIndex;
+            //List to store the result
+            IList<int> res = new List<int>();
+            //Dictionary to store the factorial values
+            Dictionary<int, BigInteger> fact = new Dictionary<int, BigInteger>();
+            fact.Add(0, 1);
+            fact.Add(1, 1);
+
+            //i = current element in row. Total number of elements in the row is rowIndex+1
+            foreach(int r in Enumerable.Range(0, n+1))
+            {
+                //Calculate the value of the current element using the formula for Pascal's Triangle
+                //nCr = n! / r!(n - r)! 
+                BigInteger val = Factorial(n, fact)/(Factorial(r, fact) * (Factorial(n - r, fact)));
+
+                res.Add((int)val);
+            }
+
+            return res;   
         }
 
         //Add two binary numbers
@@ -379,6 +408,87 @@ namespace PracticeProblems
                 }
             }
             return res.Length == 0 ? "" : res.ToString();
+        }
+    
+        //Rearange the array so that all the zeroes are at the end
+        //The order of the non-zero elements should not change
+        //example: [0,1,0,3,12] => [1,3,12,0,0]
+        public void MoveZeroes(int[] nums)
+        {
+            int zPntr = 0;
+
+            for(int i = 0; i < nums.Length; i++)
+            {
+                if(nums[i] != 0)
+                    nums[zPntr++] = nums[i];            
+            }
+            for(int i = zPntr; i < nums.Length; i++)
+                nums[i] = 0;
+        }
+
+        public string CustomSortString(string order, string s) 
+        {
+            if(s.Length == 1)
+                return s;
+            
+            StringBuilder res = new StringBuilder();
+            
+            foreach(char c in order)
+            {
+                if(s.Contains(c))
+                {
+                    int count = s.Count(x => x == c);
+                    res.Append(c, count);
+                }
+            }
+
+            foreach(char c in s)
+            {
+                if(!order.Contains(c))
+                    res.Append(c);
+            }
+            
+            return res.ToString();
+        }
+
+        //Definition for singly-linked list.
+        public class ListNode 
+        {
+            public int val;
+            public ListNode next;
+            public ListNode(int val=0, ListNode next=null) 
+            {
+                this.val = val;
+                this.next = next;
+            }
+        }
+
+        //LEET CODE 83, given a sorted linked list, delete all duplicates such that each element appears only once
+        public ListNode DeleteDuplicates(ListNode head) 
+        {
+            if(head == null)
+                return null;
+
+            ListNode cur = head.next;
+            ListNode prev = head;
+
+            while(cur != null)
+            {
+                if(cur.val == prev.val)
+                    cur = cur.next;
+
+                else
+                {
+                    prev.next = cur;
+                    prev = cur;
+                    cur = cur.next;
+                }
+            }
+
+            prev.next = null;
+
+            return head;
+            
         }
     }
 
